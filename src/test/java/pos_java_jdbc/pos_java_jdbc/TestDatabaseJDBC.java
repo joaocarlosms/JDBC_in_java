@@ -13,7 +13,9 @@ public class TestDatabaseJDBC {
 	@Test
 	public void initDatabase() {
 		StudentDao studentDao = new StudentDao();
-		Student st = new Student(2L, "João Carlos", "jc@gmail.com");
+		Student st = new Student();
+		st.setNameSt("zezinho2");
+		st.setEmail("zezin@gmail.com");
 		
 		studentDao.saveStudent(st);
 	}
@@ -28,7 +30,7 @@ public class TestDatabaseJDBC {
 			System.out.println(st);
 		}
 	}
-	
+
 	@Test
 	public void initGetStudentById() throws Exception {
 		StudentDao stDao = new StudentDao();
