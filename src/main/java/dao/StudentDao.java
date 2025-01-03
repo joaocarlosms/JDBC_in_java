@@ -76,6 +76,22 @@ public class StudentDao {
 		
 		return st_found;
 	}
+	
+	public void updateStudent(Student new_st) throws Exception {
+		try {
+			
+			String sql = "UPDATE student SET name_st = ? WHERE id = "+new_st.getId();
+			
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, new_st.getNameSt());
+			
+			statement.execute();
+			connection.commit();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 

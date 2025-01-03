@@ -36,4 +36,14 @@ public class TestDatabaseJDBC {
 		Student st = stDao.getStudentById(5L);
 		System.out.println(st);
 	}
+	
+	@Test
+	public void initUpdateStudent() throws Exception {
+		StudentDao stDao = new StudentDao();
+		
+		Student new_st = stDao.getStudentById(1L);
+		new_st.setNameSt("João Atualizado");
+		
+		stDao.updateStudent(new_st);
+	}
 }
