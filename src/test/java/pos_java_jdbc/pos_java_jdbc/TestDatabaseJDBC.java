@@ -19,20 +19,21 @@ public class TestDatabaseJDBC {
 	}
 	
 	@Test
-	public void initGetAllStudentsFromDatabase() {
+	public void initGetAllStudentsFromDatabase() throws Exception {
 		StudentDao stDao = new StudentDao();
-		
-		try {
 			
-			List<Student> allStudents = stDao.getAllStudents();
+		List<Student> allStudents = stDao.getAllStudents();
 			
-			for(Student st : allStudents) {
-				System.out.println(st);
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
+		for(Student st : allStudents) {
+			System.out.println(st);
 		}
-		
+	}
+	
+	@Test
+	public void initGetStudentById() throws Exception {
+		StudentDao stDao = new StudentDao();
+				
+		Student st = stDao.getStudentById(5L);
+		System.out.println(st);
 	}
 }

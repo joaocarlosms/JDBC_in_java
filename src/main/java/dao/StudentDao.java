@@ -59,6 +59,23 @@ public class StudentDao {
 		
 		return listStudent;
 	}
+	
+	public Student getStudentById(Long id) throws Exception {
+		Student st_found = new Student();
+		
+		String sql = "SELECT * FROM student WHERE id = "+id;
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		ResultSet resultSet = statement.executeQuery();
+		
+		while(resultSet.next()) {
+			st_found.setId(resultSet.getLong("id"));
+			st_found.setNameSt(resultSet.getString("name_st"));
+			st_found.setEmail(resultSet.getString("email"));
+		}
+		
+		return st_found;
+	}
 }
 
 

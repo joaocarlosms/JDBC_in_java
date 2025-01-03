@@ -12,7 +12,7 @@ public class Student {
 	}
 	
 	public Student() {
-		this.id = -1L;
+		this.id = null;
 		this.name_st = "";
 		this.email = "";
 	}
