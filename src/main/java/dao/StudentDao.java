@@ -2,7 +2,10 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import connectionJDBC.SingleConnection;
 import model.Student;
@@ -36,4 +39,40 @@ public class StudentDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Student> getAllStudents() throws Exception {
+		List<Student> listStudent = new ArrayList<Student>();
+		
+		String sql = "SELECT * FROM student";
+		
+		PreparedStatement statement = 	connection.prepareStatement(sql);
+		ResultSet resultset = statement.executeQuery();
+		
+		while(resultset.next()) {
+			Student st = new Student();
+			st.setId(resultset.getLong("id"));
+			st.setNameSt(resultset.getString("name_st"));
+			st.setEmail(resultset.getString("email"));
+			
+			listStudent.add(st);
+		}
+		
+		return listStudent;
+	}
 }
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,12 @@ public class Student {
 		this.email = email;
 	}
 	
+	public Student() {
+		this.id = -1L;
+		this.name_st = "";
+		this.email = "";
+	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -33,5 +39,10 @@ public class Student {
 	
 	public String getEmail() {
 		return email;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name_st=" + name_st + ", email=" + email + "]";
 	}
 }
