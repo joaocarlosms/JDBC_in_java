@@ -91,6 +91,22 @@ public class StudentDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteStudentById(Long id) throws Exception {
+		try {
+			
+			String sql = "DELETE FROM student WHERE id = "+id;
+		
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			statement.execute();
+			connection.commit();
+			
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 

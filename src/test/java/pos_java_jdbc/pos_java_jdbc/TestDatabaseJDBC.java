@@ -48,4 +48,34 @@ public class TestDatabaseJDBC {
 		
 		stDao.updateStudent(new_st);
 	}
+	
+	@Test
+	public void initDeleteStudentById() throws Exception {
+		StudentDao stDao = new StudentDao();
+		stDao.deleteStudentById(2L);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
