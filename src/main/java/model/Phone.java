@@ -4,7 +4,7 @@ public class Phone {
 	private Long id;
 	private String number_phone;
 	private String type_phone;
-	private Student student_phone;
+	private Long student_phone;
 	
 	public Phone() {
 		this.id = null;
@@ -13,7 +13,7 @@ public class Phone {
 		this.student_phone = null;
 	}
 	
-	public Phone(Long id, String number_phone, String type_phone, Student student_phone) {
+	public Phone(Long id, String number_phone, String type_phone, Long student_phone) {
 		this.id = id;
 		this.number_phone = number_phone;
 		this.type_phone = type_phone;
@@ -44,11 +44,11 @@ public class Phone {
 		this.type_phone = type_phone;
 	}
 
-	public Student getStudent_phone() {
+	public Long getStudent_phone() {
 		return student_phone;
 	}
 
-	public void setStudent_phone(Student student_phone) {
+	public void setStudent_phone(Long student_phone) {
 		this.student_phone = student_phone;
 	}
 }

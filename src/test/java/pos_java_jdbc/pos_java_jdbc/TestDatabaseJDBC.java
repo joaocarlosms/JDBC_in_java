@@ -5,7 +5,9 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import connectionJDBC.SingleConnection;
+import dao.PhoneDao;
 import dao.StudentDao;
+import model.Phone;
 import model.Student;
 
 public class TestDatabaseJDBC {
@@ -53,6 +55,18 @@ public class TestDatabaseJDBC {
 	public void initDeleteStudentById() throws Exception {
 		StudentDao stDao = new StudentDao();
 		stDao.deleteStudentById(2L);
+	}
+	
+	@Test
+	public void initSavePhone() throws Exception {
+		Phone phone = new Phone();
+		PhoneDao phoneDao = new PhoneDao();
+		
+		phone.setNumber_phone("(32) 1130-5667");
+		phone.setType_phone("Home");
+		phone.setStudent_phone(9L);
+		
+		phoneDao.savePhone(phone);
 	}
 }
 
