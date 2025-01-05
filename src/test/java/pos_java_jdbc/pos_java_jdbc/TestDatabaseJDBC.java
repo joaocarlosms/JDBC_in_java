@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import connectionJDBC.SingleConnection;
 import dao.PhoneDao;
 import dao.StudentDao;
+import model.BeanStudentPhone;
 import model.Phone;
 import model.Student;
 
@@ -67,6 +68,17 @@ public class TestDatabaseJDBC {
 		phone.setStudent_phone(9L);
 		
 		phoneDao.savePhone(phone);
+	}
+	
+	@Test
+	public void initGetListStudentPhone() throws Exception {
+		PhoneDao phoneDao = new PhoneDao();
+		
+		List<BeanStudentPhone> listStPhones = phoneDao.getListStudentPhone(1L);
+		
+		for(BeanStudentPhone st_phone : listStPhones) {
+			System.out.println(st_phone);
+		}
 	}
 }
 
