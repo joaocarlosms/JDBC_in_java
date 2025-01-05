@@ -80,6 +80,12 @@ public class TestDatabaseJDBC {
 			System.out.println(st_phone);
 		}
 	}
+	
+	@Test
+	public void initDeletePhoneByStudent() throws Exception {
+		PhoneDao phoneDao = new PhoneDao();
+		phoneDao.deletePhoneByStudent(9L);
+	}
 }
 
 

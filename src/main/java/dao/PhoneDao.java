@@ -61,6 +61,19 @@ public class PhoneDao {
 		
 		return st_phones;
 	}
+	
+	public void deletePhoneByStudent(Long idStudent) throws Exception {
+		String sqlPhone = "DELETE FROM phone_student WHERE student_phone = "+idStudent;
+		String sqlStudent = "DELETE FROM student WHERE id = "+idStudent;
+		
+		PreparedStatement statement = connection.prepareStatement(sqlPhone);
+		statement.executeUpdate();
+		connection.commit();
+		
+		statement = connection.prepareStatement(sqlStudent);
+		statement.executeUpdate();
+		connection.commit();
+	}
 }
 
 
